@@ -4,7 +4,7 @@ public class Usuario {
 	private String nombre;
 	private int presupuesto;
 	private double tiempo;
-	private Producto itinerarioList;
+	protected Producto itinerarioList;
 	
 	public Usuario(String nombre, int presupuesto, double tiempo) {
 		this.nombre = nombre;
