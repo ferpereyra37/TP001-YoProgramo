@@ -10,11 +10,5 @@ public class Porcentual extends Promocion {
 		this.porcentaje = porcentaje;
 	}
 
-/*	public int getCosto() {
-		int costo = 0;
-		for(int i = 0; i < atraccionesList.size(); i++)
-			costo += atraccionesList.getCosto[i];
-		return costo -= costo * porcentaje / 100;
-*/
 	}
 	

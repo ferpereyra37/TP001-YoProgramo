@@ -1,11 +1,11 @@
 package turismo;
 
+import java.util.Objects;
+
 public abstract class Producto {
-	private String nombre;
+	protected String nombre;
 	protected int costo;
-	private double tiempo;
-
-
+	protected double tiempo;
 	
 	public Producto(String nombre, int costo, double tiempo) {
 		this.nombre = nombre;
@@ -13,24 +13,49 @@ public abstract class Producto {
 		this.tiempo = tiempo;
 	}
 
+	public Producto(String nombre) {
+		this.nombre = nombre;
+	}
+
+	@Override
+	public String toString() {
+		return "Producto [nombre=" + nombre + ", costo=" + costo + ", tiempo=" + tiempo + "]";
+	}
+
+
+
 	public String getNombre() {
-		return this.nombre;
+		return nombre;
 	}
 
-	public double getTiempo() {
-		return this.tiempo;
-	}
-
-	public int getCosto() {
+	public Integer getCosto() {
 		return this.costo;
 	}
 	
-	
-	
-
-//	public void ordenarProductos() {
-		
+	public Double getTiempo() {
+		return this.tiempo;
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(costo, nombre, tiempo);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Producto other = (Producto) obj;
+		return costo == other.costo && Objects.equals(nombre, other.nombre)
+				&& Double.doubleToLongBits(tiempo) == Double.doubleToLongBits(other.tiempo);
+	}
+	
+	
+	
+}
 	
 

@@ -10,9 +10,22 @@ public class Atraccion extends Producto {
 
 	@Override
 	public String toString() {
-		return super.toString() + "Atraccion [cupo=" + cupo + "]";
+		return super.toString() + " Atraccion [cupo=" + cupo + "]";
 	}
 
+	@Override
+	public String getNombre() {
+		return this.nombre;
+	}
+	
+	public Integer getCosto() {
+		return this.costo;
+	}
+
+	public Double getTiempo() {
+		return this.tiempo;
+	}
+	
 	public int getCupo() {
 		return this.cupo;
 	}
@@ -24,7 +37,7 @@ public class Atraccion extends Producto {
 	public void restarCupo() {
 		this.cupo -= 1;
 	}
-	
+
 	
 	
 
