@@ -53,6 +53,15 @@ public abstract class Producto {
 		return costo == other.costo && Objects.equals(nombre, other.nombre)
 				&& Double.doubleToLongBits(tiempo) == Double.doubleToLongBits(other.tiempo);
 	}
+
+	public boolean hayCupo() {
+		return false;
+	}
+
+	public void reservarCupo() {
+	}
+
+	protected abstract boolean esPromocion();
 	
 	
 	

@@ -3,6 +3,7 @@ package turismo;
 public class Atraccion extends Producto {
 	private int cupo;
 
+
 	public Atraccion(String nombre, int costo, double tiempo, int cupo) {
 		super(nombre, costo, tiempo);
 		this.cupo = cupo;
@@ -13,11 +14,10 @@ public class Atraccion extends Producto {
 		return super.toString() + " Atraccion [cupo=" + cupo + "]";
 	}
 
-	@Override
 	public String getNombre() {
 		return this.nombre;
 	}
-	
+
 	public Integer getCosto() {
 		return this.costo;
 	}
@@ -25,24 +25,25 @@ public class Atraccion extends Producto {
 	public Double getTiempo() {
 		return this.tiempo;
 	}
-	
+
 	public int getCupo() {
 		return this.cupo;
 	}
-	
-	public boolean estaDisponible() {
+
+
+	@Override
+	public boolean hayCupo() {
 		return this.cupo > 0;
 	}
-	
-	public void restarCupo() {
-		this.cupo -= 1;
+
+	@Override
+	public void reservarCupo() {
+		this.cupo--;
 	}
 
-	
-	
-
-	
-	
-
-
+	@Override
+	protected boolean esPromocion() {
+		return false;
+	}
 }
+	

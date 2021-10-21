@@ -1,10 +1,14 @@
 package turismo;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class Usuario {
 	private String nombre;
 	private int presupuesto;
 	private double tiempo;
-	protected Producto itinerarioList;
+	protected List<Producto> itinerarioList = new ArrayList<Producto>();
 	
 	public Usuario(String nombre, int presupuesto, double tiempo) {
 		this.nombre = nombre;
@@ -17,6 +21,9 @@ public class Usuario {
 		return "Usuario [nombre=" + nombre + ", presupuesto=" + presupuesto + ", tiempo=" + tiempo + "]";
 	}
 
+	public String getNombre() {
+		return nombre;
+	}
 	public int getPresupuesto() {
 		return presupuesto;
 	}
@@ -25,8 +32,24 @@ public class Usuario {
 		return tiempo;
 	}
 
-	public Producto getItinerarioList() {
+	public List<Producto> getItinerarioList() {
 		return itinerarioList;
 	}	
+	
+	public void restarTiempo(double tiempo) {
+		this.tiempo-=tiempo;
+	}
+	
+	public void restarPresupuesto(double dineroGastado) {
+		this.presupuesto -= dineroGastado;
+	}
+	
+	public void setItinerario(List<Producto> itinerarioDado) {
+		itinerarioList = itinerarioDado;
+	}
+
+
+	
+	
 
 }
