@@ -1,0 +1,8 @@
+Moria,10,2,1
+MinasTirith,5,2.5,25
+LaComarca,3,6.5,150
+Mordor,25,3,4
+AbismoDeHelm,5,2,15
+Lothlorien,35,1,30
+Erebor,3,3,32
+BosqueNegro,3,4,12

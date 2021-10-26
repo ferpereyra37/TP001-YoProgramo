@@ -1,0 +1,5 @@
+Axel,100,12.00
+Bruno,70,9.00
+Camila,220,8.00
+Claudia,120,8.00
+Gimena,150,16.00
