@@ -1,20 +1,14 @@
-package turismo;
+package parque;
 
 import java.util.List;
 
-
-public abstract class Promocion extends Producto {
+public class Promocion implements Ofertable {
 	protected List<Atraccion> atraccionesList;
+	protected String nombre;
 
-
-	public List<Atraccion> getAtraccionesList() {
-		return atraccionesList;
-	}
-
-	public Promocion(String nombre, List<Atraccion> atraccionesList) {
-		super(nombre);
-		this.atraccionesList = atraccionesList;
-		
+	public Promocion(String nombre, List<Atraccion> atraccionesList2) {
+		this.nombre = nombre;
+		this.atraccionesList = atraccionesList2;
 	}
 
 	@Override
@@ -26,9 +20,9 @@ public abstract class Promocion extends Producto {
 	public boolean hayCupo() {
 		int i = 0;
 		boolean estaDisponible = true;
-		while (atraccionesList.size() < i && estaDisponible) {
-			if (atraccionesList.get(i).hayCupo() == false) {
-				estaDisponible = false;
+		while (i < atraccionesList.size() && estaDisponible) {
+			if (!atraccionesList.get(i).hayCupo()) {
+				return false;
 			}
 			i++;
 		}
@@ -43,7 +37,7 @@ public abstract class Promocion extends Producto {
 		}
 		return costoTotal;
 	}
-	
+
 	public Integer getCostoSinDescuento() {
 		int costoTotal = 0;
 		for (int i = 0; i < atraccionesList.size(); i++) {
@@ -54,6 +48,7 @@ public abstract class Promocion extends Producto {
 
 	@Override
 	public Double getTiempo() {
+		// TODO Auto-generated method stub
 		double tiempoHastaAhora = 0;
 		for (int i = 0; i < atraccionesList.size(); i++) {
 			tiempoHastaAhora += atraccionesList.get(i).getTiempo();
@@ -63,6 +58,7 @@ public abstract class Promocion extends Producto {
 
 	@Override
 	public void reservarCupo() {
+		// TODO Auto-generated method stub
 		for (int i = 0; i < atraccionesList.size(); i++) {
 			atraccionesList.get(i).reservarCupo();
 		}
@@ -70,11 +66,31 @@ public abstract class Promocion extends Producto {
 
 	@Override
 	public String getNombre() {
+		// TODO Auto-generated method stub
 		return this.nombre;
 	}
-	
+
+	@Override
 	public boolean esPromocion() {
+		// TODO Auto-generated method stub
 		return true;
 	}
 
+	public List<Atraccion> getAtraccionesList() {
+		return atraccionesList;
+	}
+
+	@Override
+	public void imprimirOferta() {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void agregarAtraccionesALista(Ofertable ofertable, List<Atraccion> listaAtracciones) {
+		for (int i = 0; i < getAtraccionesList().size(); i++) {
+			listaAtracciones.add(this.atraccionesList.get(i));
+		}
+	}
+
 }
+
