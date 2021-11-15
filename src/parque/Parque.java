@@ -218,11 +218,11 @@ public class Parque {
 			tiempoTotal += usuario.getItinerario().get(i).getTiempo();
 			salida.println((i + 1) + ". " + usuario.getItinerario().get(i).getNombre().toUpperCase());
 			System.out.println((i + 1) + ". " + usuario.getItinerario().get(i).getNombre().toUpperCase());
-			salida.println("El costo total de su itinerario es: " + costoTotal + " monedas.");
-			salida.println("El tiempo total de su itinerario es: " + tiempoTotal + " horas.");
-			System.out.println("El costo total de su itinerario es: " + costoTotal + " monedas.");
-			System.out.println("El tiempo total de su itinerario es " + tiempoTotal + " horas.");
 		}
+		salida.println("El costo total de su itinerario es: " + costoTotal + " monedas.");
+		salida.println("El tiempo total de su itinerario es: " + tiempoTotal + " horas.");
+		System.out.println("El costo total de su itinerario es: " + costoTotal + " monedas.");
+		System.out.println("El tiempo total de su itinerario es " + tiempoTotal + " horas.");
 		salida.close();
 	}
 
